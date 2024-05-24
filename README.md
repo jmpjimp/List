@@ -8,8 +8,5 @@ This code was created in VisualStudioCode with Java but can be edited to fit oth
 This code is free to use for anyone and is allowed to be modified to whatever purpose you may need.
 
 # Credit
-If you use my code please credit me in your project/program
+use this code without crediting me
 
-exceptions to this are if you use my code for a school project or use it in a personal/private program.
-
-If you do use my code in a program please contact me at jmpcontact29@gmail.com as i'd love to see your code and how you used my simple program
