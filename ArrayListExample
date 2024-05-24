@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+import java.util.ArrayList;
+
+public class ArrayListExample
+{  
+   public static void main(String args[])
+   {  
+     // sets up scanner string and int needed later on in code
+      Scanner scan = new Scanner(System.in);
+      String name;
+      int position = 1;
+   
+      // creates the list and the default 3 animals in the list
+      ArrayList<String> animalList = new ArrayList<String>();  
+      animalList.add("dog");
+      animalList.add("cat");
+      animalList.add("rabbit");   
+      
+      System.out.println(animalList);
+      System.out.println("Would you like to (a)dd, (i)nsert, (r)emove, re(p)lace, or (q)uit");
+      String choice = scan.nextLine();
+      /* this code runs until choice is equal to q, the while statement is there
+       * so the if statements can run as many times as it wants if the while statement wasnt there then code can only run once
+       */
+      while(!choice.equals("q")) {
+         
+      // runs when choice equals a and adds a new animal entered by the user
+         if (choice.equals("a")) {
+          System.out.println("enter an animal:");
+          name = scan.nextLine();
+          animalList.add(name);
+          System.out.println(animalList);
+      }
+      // runs when choice equals i and inserts an animal in a valid position entered by the user
+        if (choice.equals("i")) {
+          System.out.println("enter an animal:");
+          name = scan.nextLine();
+          System.out.println("enter a position:");
+          position = scan.nextInt();
+          System.out.println();
+          // this if codes checks for invalid positions this code is in I, R, and P
+          if (position <= 0 || position > animalList.size()) {
+            System.out.println("invalid positition");
+          }
+          else {
+            animalList.add(position-1, name);
+            System.out.println(animalList);
+         }
+      }
+      // run when choice equals r and removes an animal in the list selected by the user
+       if(choice.equals("r"))
+       {
+         System.out.println("enter a position");
+         position = scan.nextInt();
+         if (position <= 0 || position > animalList.size()) {
+          System.out.println("invalid positition");
+        }
+        else {
+         animalList.remove(position-1);
+         System.out.println(animalList);
+        }
+       }
+       // runs when choice equals p and replaces an animal in the list chosen by the user
+       if (choice.equals("p"))  {
+          System.out.println("enter a animal");
+          name = scan.nextLine();
+          System.out.println("enter a position");
+          position = scan.nextInt();
+          if (position <= 0 || position > animalList.size()) {
+            System.out.println("invalid positition");
+          }
+          else {
+            animalList.remove(position-1);
+            animalList.add(position-1, name);
+            System.out.println(animalList);
+          }
+      }
+      System.out.println("Would you like to (a)dd, (i)nsert, (r)emove, re(p)lace, or (q)uit");
+       choice = scan.nextLine(); 
+   }
+       // prints out after every if statement
+       
+   }
+   
+}
